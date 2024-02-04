@@ -30,6 +30,19 @@ sql = "INSERT INTO user_info (USER_EMAIL, BLOG_ID) VALUES ('%s', '%s')" % (str(u
 root_db.execute(sql)
 db_conn.commit()
 
+sql = """
+CREATE TABLE session_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    session_ip VARCHAR(255),
+    user_email VARCHAR(255),
+    page VARCHAR(50),
+    access_time DATETIME
+);
+"""
+
+root_db.execute(sql)
+db_conn.commit()
+
 sql = "SELECT * FROM user_info"
 root_db.execute(sql)
 results = root_db.fetchall()

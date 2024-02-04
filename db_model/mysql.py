@@ -10,7 +10,7 @@ MYSQL_CONN = pymysql.connect(
     charset = 'utf8'
     )
 
-def conn_mysql(): # 연결이 끊어져 있을 경우 사용 함수
+def conn_mysql(): # db 연결 함수
     if not MYSQL_CONN.open:
         MYSQL_CONN.ping(reconnect=True)
     return MYSQL_CONN

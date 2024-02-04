@@ -4,3 +4,11 @@ CREATE TABLE user_info(
     BLOG_ID CHAR(4),
     PRIMARY KEY(USER_ID)
 );
+
+CREATE TABLE session_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    session_ip VARCHAR(255),
+    user_email VARCHAR(255),
+    page VARCHAR(50),
+    access_time DATETIME
+);
